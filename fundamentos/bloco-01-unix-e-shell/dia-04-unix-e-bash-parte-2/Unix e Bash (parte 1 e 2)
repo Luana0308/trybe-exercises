@@ -1,0 +1,186 @@
+➜  ~ git:(master) ✗ ls
+Applications            Google Drive            Projects
+Desktop                 Library                 Public
+Documents               Movies                  iMyFone_WhatsApp_Backup
+Downloads               Music
+Dropbox                 Pictures
+➜  ~ git:(master) ✗ cd Desktop 
+➜  Desktop git:(master) ✗ ls
+Screen Shot 2021-09-23 at 08.38.55.png jackson
+Screen Shot 2021-10-20 at 10.08.39.png materias complementares da consulta
+Screen Shot 2021-10-21 at 13.53.17.png tripleTheChances
+Visual Studio Code.app                 trybe
+com usar arrays                        urna desafio
+explicando_funcao
+➜  Desktop git:(master) ✗ cd trybe 
+➜  trybe git:(master) ✗ ls
+calendario e informações extras     soft skills
+modulo 1                            trybe exercicios
+➜  trybe git:(master) ✗ cd trybe\ exercicios 
+➜  trybe exercicios git:(master) ✗ ls
+Fundamentos de Desenvolvimento web unix_tests
+➜  trybe exercicios git:(master) ✗ ls
+Fundamentos de Desenvolvimento web unix_tests
+➜  trybe exercicios git:(master) ✗ cd Fundamentos\ de\ Desenvolvimento\ web 
+➜  Fundamentos de Desenvolvimento web git:(master) ✗ ls
+modulo 1
+➜  Fundamentos de Desenvolvimento web git:(master) ✗ cd modulo\ 1 
+➜  modulo 1 git:(master) ✗ ls
+Unix e Bash parte 1
+➜  modulo 1 git:(master) ✗ cd Unix\ e\ Bash\ parte\ 1 
+➜  Unix e Bash parte 1 git:(master) ✗ ls
+➜  Unix e Bash parte 1 git:(master) ✗ clear
+
+➜  Unix e Bash parte 1 git:(master) ✗ mkdir unix_tests
+➜  Unix e Bash parte 1 git:(master) ✗ cd unix_tests 
+➜  unix_tests git:(master) ✗ touch trybe.txt
+➜  unix_tests git:(master) ✗ cat > trybe.txt 
+Parte I - Criação de arquivos e diretórios
+Dica : Para criação de arquivos vazios você pode utilizar o comando touch nome-do-arquivo.extensao .
+Utilizando o terminal, aplique o comando de criação de diretórios que você aprendeu, crie um diretório chamado unix_tests e navegue até ele.
+Crie um arquivo de texto com o nome trybe.txt .
+Crie uma cópia do arquivo trybe.txt com nome trybe_backup.txt .
+Renomeie o arquivo trybe.txt .
+Dentro de unix_tests , crie um novo diretório chamado backup .
+Mova o arquivo trybe_backup.txt para o diretório backup .
+Dentro de unix_tests , crie um novo diretório chamado backup2 .
+Mova o arquivo trybe_backup.txt da pasta backup para a pasta backup2 .
+Apague a pasta backup .
+Renomeie a pasta backup2 para backup .
+Veja qual o path completo do diretório atual e liste todos os arquivos dentro dele.
+Apague o diretório backup .
+Limpe o terminal.
+Para os exercícios 14 e 15, crie, de forma manual na parte gráfica do seu sistema operacional (através do mouse de texto com o conteúdo abaixo, chamado skills.txt :
+Copiar
+Internet
+Unix
+Bash
+HTML
+CSS
+JavaScript
+React
+SQL
+Mostre na tela as 5 primeiras skills do arquivo skills.txt .
+Mostre na tela as 4 últimas skills do arquivo skills.txt .
+Apague todos os arquivos que terminem em .txt .
+
+➜  unix_tests git:(master) ✗ cp trybe.txt trybe_backup.txt        
+➜  unix_tests git:(master) ✗ ls
+trybe.txt        trybe_backup.txt
+➜  unix_tests git:(master) ✗ mkdir backup          
+➜  unix_tests git:(master) ✗ mv trybe_backup.txt backup 
+➜  unix_tests git:(master) ✗ ls
+backup    trybe.txt
+➜  unix_tests git:(master) ✗ mkdir backup2
+➜  unix_tests git:(master) ✗ ls          
+backup    backup2   trybe.txt
+➜  unix_tests git:(master) ✗ mv backup/trybe_backup.txt backup2 
+➜  unix_tests git:(master) ✗ ls
+backup    backup2   trybe.txt
+➜  unix_tests git:(master) ✗ cd backup2
+➜  backup2 git:(master) ✗ ls
+trybe_backup.txt
+➜  backup2 git:(master) ✗ cd ..                   
+➜  unix_tests git:(master) ✗ ls
+backup    backup2   trybe.txt
+➜  unix_tests git:(master) ✗ rm -rf backup
+➜  unix_tests git:(master) ✗ ls
+backup2   trybe.txt
+➜  unix_tests git:(master) ✗ mv backup2 backup
+➜  unix_tests git:(master) ✗ ls
+backup    trybe.txt
+➜  unix_tests git:(master) ✗ rm -rf backup 
+➜  unix_tests git:(master) ✗ ls
+trybe.txt
+➜  unix_tests git:(master) ✗      
+➜  unix_tests git:(master) ✗ clear
+
+➜  unix_tests git:(master) ✗ touch skills.txt
+➜  unix_tests git:(master) ✗ cat skills.txt 
+➜  unix_tests git:(master) ✗ Internet
+Unix
+Bash
+HTML
+CSS
+JavaScript
+React
+SQL
+zsh: command not found: Internet
+zsh: command not found: Unix
+zsh: command not found: Bash
+zsh: command not found: HTML
+zsh: command not found: CSS
+zsh: command not found: JavaScript
+zsh: command not found: React
+zsh: command not found: SQL
+➜  unix_tests git:(master) ✗ cat > skills.txt 
+Internet
+Unix
+Bash
+HTML
+CSS
+JavaScript
+React
+SQL
+➜  unix_tests git:(master) ✗ wc skills.txt 
+       8       8      49 skills.txt
+➜  unix_tests git:(master) ✗ wc -5 skills.txt 
+wc: illegal option -- 5
+usage: wc [-clmw] [file ...]
+➜  unix_tests git:(master) ✗ wc -l 5 skills.txt 
+wc: 5: open: No such file or directory
+       8 skills.txt
+       8 total
+➜  unix_tests git:(master) ✗ head -5 skills.txt 
+Internet
+Unix
+Bash
+HTML
+CSS
+➜  unix_tests git:(master) ✗ tail -4 skills.txt 
+CSS
+JavaScript
+React
+SQL
+➜  unix_tests git:(master) ✗ rm -rf *.txt
+➜  unix_tests git:(master) ✗ ls
+➜  unix_tests git:(master) ✗ 
+ unix_tests git:(master) ✗ 
+curl -o countries.txt "https://gist.githubusercontent.com/kalinchernev/486393efcca01623b18d/raw/daa24c9fea66afb7d68f8d69f0c4b8eeb9406e83/countries"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--    0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--  100  1842  100  1842    0     0   3361      0 --:--:-- --:--:-- --:--:--  3355
+➜  unix_tests git:(master) ✗ less countries.txt 
+
+[1]  + 21439 suspended  less countries.txt
+➜  unix_tests git:(master) ✗ less countries.txt 
+
+[2]  + 21495 suspended  less countries.txt
+➜  unix_tests git:(master) ✗ grep Brazil countries.txt 
+Brazil
+➜  unix_tests git:(master) ✗ grep -i brazil countries.txt 
+Brazil
+➜  unix_tests git:(master) ✗ touch phrases.txt
+➜  unix_tests git:(master) ✗ cat > phrases.txt 
+luana hoja ta atrasada!!!
+Bora Estudar pessoal
+A vida não ta facil não!!!
+➜  unix_tests git:(master) ✗ grep -iv fox phrases.txt 
+luana hoja ta atrasada!!!
+Bora Estudar pessoal
+A vida não ta facil não!!!
+➜  unix_tests git:(master) ✗ wc -w phrases.txt 
+      13 phrases.txt
+➜  unix_tests git:(master) ✗ wc -l phrases.txt 
+       3 phrases.txt
+➜  unix_tests git:(master) ✗ touch empty.tbt 
+➜  unix_tests git:(master) ✗ touch empty.pdf
+➜  unix_tests git:(master) ✗ ls
+countries.txt empty.pdf     empty.tbt     phrases.txt
+➜  unix_tests git:(master) ✗ ls *.txt
+countries.txt phrases.txt
+➜  unix_tests git:(master) ✗ ls *.txt *.tbt
+countries.txt empty.tbt     phrases.txt
+➜  unix_tests git:(master) ✗ ls
+countries.txt empty.pdf     empty.tbt     phrases.txt
+➜  unix_tests git:(master) ✗ 
