@@ -26,6 +26,6 @@ img{
 
 }
 .footer{
-    display: inline;
-    margin-right: 20px;
+    display: flex;
+    margin-right: 50px;
 }
