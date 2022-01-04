@@ -115,3 +115,109 @@ const expectedResult = [
     .sort((idade1, idade2) => idade1.age -idade2.age)
   }
   console.log(nameAndAge())
+
+
+  //  Crie um array com todos os objetos que possuem gênero ficção científica ou fantasia.
+  const expectedResult2 = [
+    { 
+      id: 1,
+      name: 'As Crônicas de Gelo e Fogo',
+      genre: 'Fantasia',
+      author: { name: 'George R. R. Martin', birthYear: 1948 },
+      releaseYear: 1991
+    },
+    {
+      id: 2,
+      name: 'O Senhor dos Anéis',
+      genre: 'Fantasia',
+      author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
+      releaseYear: 1954
+    },
+    {
+      id: 3,
+      name: 'Fundação',
+      genre: 'Ficção Científica',
+      author: { name: 'Isaac Asimov', birthYear: 1920 },
+      releaseYear: 1951
+    },
+    {
+      id: 4,
+      name: 'Duna',
+      genre: 'Ficção Científica',
+      author: { name: 'Frank Herbert', birthYear: 1920 },
+      releaseYear: 1965
+    }
+  ];
+  
+  function fantasyOrScienceFiction() {
+    return books.filter((book) => (book.genre === 'Ficção Científica' || book.genre === 'Fantasia'));
+  }
+  console.log(fantasyOrScienceFiction());
+
+
+// Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho.
+const expectedResult3 = [
+    {
+      id: 6,
+      name: 'O Chamado de Cthulhu',
+      genre: 'Terror',
+      author: { name: 'H. P. Lovecraft', birthYear: 1890 },
+      releaseYear: 1928,
+    },
+    {
+      id: 3,
+      name: 'Fundação',
+      genre: 'Ficção Científica',
+      author: { name: 'Isaac Asimov', birthYear: 1920 },
+      releaseYear: 1951,
+    },
+    {
+      id: 2,
+      name: 'O Senhor dos Anéis',
+      genre: 'Fantasia',
+      author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
+      releaseYear: 1954,
+    },
+  ];
+  
+  // eu posso usar o ano geral como 1962 que seria 2022 - 60 ou então usar igual fiz na função
+  function oldBooksOrdered() {
+    const currentYear = new Date().getFullYear();
+    return books.filter((book) => (book.releaseYear < currentYear - 60 )).sort((book1,book2) => book1.releaseYear - book2.releaseYear);
+  }
+  console.log(oldBooksOrdered());
+
+// Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
+const expectedResult4 = [
+    'Frank Herbert',
+    'George R. R. Martin',
+    'Isaac Asimov',
+    'J. R. R. Tolkien',
+  ];
+  
+  function fantasyOrScienceFictionAuthors() {
+    return books.filter((book) => (book.genre === 'Ficção Científica' || book.genre === 'Fantasia')).map((book) => book.author.name).sort();
+  }
+  console.log(fantasyOrScienceFictionAuthors());
+
+
+  // Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+  const expectedResult5 = [
+    'O Senhor dos Anéis',
+    'Fundação',
+    'O Chamado de Cthulhu',
+  ];
+  
+  function oldBooks() {
+    return books.filter((book) => book.releaseYear < 1962).map((book) => book.name);
+  }
+  console.log(oldBooks());
+
+  
+// Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
+const expectedResult6 = 'O Senhor dos Anéis';
+
+function authorWith3DotsOnName() {
+  return books.filter((book) => (book.author.name[0] === 'J')).map((book) => book.name);
+}
+console.log(authorWith3DotsOnName());
