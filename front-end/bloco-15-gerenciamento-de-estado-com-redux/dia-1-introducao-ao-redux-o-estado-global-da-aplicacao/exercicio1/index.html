@@ -31,14 +31,28 @@
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <button id="randow-color">Randow Color</button>
     </div>
     <script>
       const ESTADO_INICIAL = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
+      function criarCor() {
+            const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+            let cor = '#';
+            const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+            for (let i = 0; i < 6; i += 1) {
+                cor += oneChar[aleatorio()];
+            }
+            return cor;
+        }
       function reducer(state=ESTADO_INICIAL, action){
             switch (action.type) {
+                case 'RANDOW_COLOR':
+                return { ...state,
+                    colors: [...state.colors, criarCor()],
+                    index: state.colors.length, }
             case 'NEXT_COLOR':
                 return { ...state,
                 index: state.index === state.colors.length - 1 ? 0 : state.index + 1, }
@@ -57,6 +71,9 @@
         })
         document.getElementById('previous').addEventListener('click', () => {
             store.dispatch({type: 'PREVIOUS_COLOR'});
+        })
+        document.getElementById('randow-color').addEventListener('click', () => {
+            store.dispatch({type: 'RANDOW_COLOR'});
         })
 
       store.subscribe(() => {
