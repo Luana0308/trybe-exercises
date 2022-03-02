@@ -32,3 +32,8 @@ class Clients extends React.Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  registers: state.registerReducer,
+  userLogin: state.loginReducer});
+
+export default connect(mapStateToProps)(Clients);

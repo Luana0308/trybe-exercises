@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login } from './actions';
+import { login } from '../redux/actions/index';
 import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
@@ -36,3 +36,7 @@ class Login extends React.Component {
     );
   }
 }
+const mapDispatchToProps = dispatch => ({
+  login: e => dispatch(login(e))});
+
+export default connect(null, mapDispatchToProps)(Login);

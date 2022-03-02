@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addRegister } from './actions';
+import { addRegister } from '../redux/actions/index';
 import { Link } from 'react-router-dom';
 
 class Register extends React.Component {
@@ -55,3 +55,9 @@ class Register extends React.Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  userLogin: state.loginReducer});
+const mapDispatchToProps = dispatch => ({
+  addRegister: e => dispatch(addRegister(e))});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

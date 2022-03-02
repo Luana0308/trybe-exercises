@@ -2,11 +2,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import store from './store';
-import Home from './Home';
-import Login from './Login';
-import Register from './Register';
-import Clients from './Clients';
+import store from './redux/store/store';
+import Home from './pages/home';
+import Login from './pages/login';
+import Register from './pages/register';
+import Clients from './pages/clientes';
 
 class App extends React.Component {
   render() {
