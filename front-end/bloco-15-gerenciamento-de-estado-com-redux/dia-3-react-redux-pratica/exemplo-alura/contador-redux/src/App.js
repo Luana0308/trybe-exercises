@@ -1,6 +1,6 @@
 import './App.css';
 import { connect } from 'react-redux'
-import { decrementarContador, incrementarContador } from './actions/contador';
+import { decrementarContador, incrementarContador } from './redux/actions/contador';
 
 function App({ contador, incrementar, decrementar }) {
   return (

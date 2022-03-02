@@ -1,5 +1,5 @@
-export const INCREMENTAR = 'CONTADOR::INCREMENTAR';
-export const DECREMENTAR = 'CONTADOR::DECREMENTAR';
+export const INCREMENTAR = 'INCREMENTAR';
+export const DECREMENTAR = 'DECREMENTAR';
 
 export const incrementarContador = () => ({
   type: INCREMENTAR
