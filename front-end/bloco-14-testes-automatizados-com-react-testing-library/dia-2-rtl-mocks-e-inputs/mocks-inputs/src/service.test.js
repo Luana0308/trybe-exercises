@@ -14,5 +14,5 @@ test('testar se a função foi chamada apenas uma unica vez, testar se foi aplic
     expect(service.divisivelPorDois(10,5)).toBe(2)
     expect(service.divisivelPorDois).toHaveBeenCalled();
     expect(service.divisivelPorDois).toHaveBeenCalledTimes(1);
-
 })
+
