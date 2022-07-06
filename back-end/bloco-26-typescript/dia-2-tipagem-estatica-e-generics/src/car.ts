@@ -42,8 +42,16 @@ class car {
 
 }
 
-const car1 = new car('celta', colorsCar.black, 5)
+const car1 = new car('gol', colorsCar.gray, 4)
 
-car1.doors
+car1.turnOn()
+car1.openTheDoor()
+car1.closeTheDor()
+car1.turn(Directions.LEFT)
+car1.turn(Directions.LEFT)
+car1.turn(Directions.RIGHT)
+car1.honk()
+car1.openTheDoor()
+car1.closeTheDor()
 console.log(car1)
 export default car;
