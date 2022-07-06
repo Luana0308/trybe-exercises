@@ -1,3 +1,5 @@
+import { type } from "os";
+
 interface pizza {
     flavor: string,
     slice: slices
@@ -11,7 +13,32 @@ const calabresa: pizza = {
 }
 console.log(calabresa);
 
-const marguerita: pizza = {
+// const marguerita: pizza = {
+//     flavor: 'marguerita',
+//     slice: 6
+// }
+
+// console.log(marguerita)
+
+
+type comum =  'calabresa' | 'frango' | 'pepperoni'
+type veg = 'marguerita' | 'palmito' | 'cogumelo'
+type doce = 'nutela' | 'goiabada com queijo' | 'marshmallow'
+
+
+interface pizzaComum extends pizza {
+    flavor: comum
+}
+
+interface pizzaVeg extends pizza {
+    flavor: veg
+}
+
+interface pizzaDoce extends pizza {
+    flavor: doce
+}
+
+const marguerita: pizzaVeg = {
     flavor: 'marguerita',
     slice: 6
 }
