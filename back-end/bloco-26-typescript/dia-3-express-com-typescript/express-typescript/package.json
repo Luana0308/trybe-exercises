@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && node ./dist/index.js",
-    "dev": "tsnd index.ts",
+    "dev": "nodemon --exec npx ts-node ./src/index.ts",
     "build": "tsc"
   },
   "keywords": [],
@@ -25,6 +25,7 @@
     "express-async-errors": "^3.1.1",
     "http-status-codes": "^2.2.0",
     "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19",
     "restify-errors": "^8.0.2"
   }
 }
